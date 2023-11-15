@@ -1,42 +1,70 @@
-#root {
-  max-width: 1280px;
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
+:root {
+  font-family: "Pixelify Sans", sans-serif;
+  
+  --primary : #222323;
+  --secondary : #F0F6F0;
+}
+body {
+  background-color: var(--primary);
+}
+.input {
+  flex-grow: 1;
+  margin: 2px;
+  background-color: var(--primary);
+  color: var(--secondary);
+  padding: 2px;
+  border: .15rem solid var(--secondary);
+}
+.input:focus {
+  outline: none;
+}
+.btn {
+  margin: 2px;
+  border: .15rem solid var(--secondary);
+  color : var(--secondary);
+  background-color: var(--primary);
+  padding: 2px;
+}
+.btn:hover {
+  color: var(--primary);
+  background-color: var(--secondary);
+}
+
+.inputform {
+  width: 70%;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.groupframe {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+  color : var(--secondary)
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.grouptext {
+  cursor: pointer;
+  grid-column: 1/4;
+  font-weight: bold;
+  margin-top: 10px;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
-  padding: 2em;
+  cursor: pointer;
+  padding: 10px;
+  border: 2px solid var(--secondary);
+  width: 100%;
 }
 
-.read-the-docs {
-  color: #888;
+.cardtitle {
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+.cardcontent {
+  font-size: 1rem;
+}
+.ungroups {
+  display: grid;
 }
