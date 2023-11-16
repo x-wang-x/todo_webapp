@@ -14,14 +14,16 @@ body {
   background-color: var(--primary);
   color: var(--secondary);
   padding: 2px;
-  border: .15rem solid var(--secondary);
+  border : none;
+  /* border: .15rem solid var(--secondary); */
 }
 .input:focus {
   outline: none;
 }
 .btn {
   margin: 2px;
-  border: .15rem solid var(--secondary);
+  /* border: .15rem solid var(--secondary); */
+  border : none;
   color : var(--secondary);
   background-color: var(--primary);
   padding: 2px;
@@ -32,6 +34,7 @@ body {
 }
 
 .inputform {
+  border: .15rem solid var(--secondary);
   width: 70%;
   margin: 0 auto;
   align-items: center;

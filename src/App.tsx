@@ -21,7 +21,8 @@ function App() {
     <>
       <div className="inputform">
         <InputBar onChange={handleChange} text={inputVal}/>
-        <Button onClick={()=>setItem(inputVal)} text="Add" />
+        
+        { inputVal != '' && <Button onClick={()=>setItem(inputVal)} text="Add" /> }
       </div>
       <div className="groups">
         <Group groupName="Group 1" />
