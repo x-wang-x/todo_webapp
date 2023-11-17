@@ -19,7 +19,7 @@ function App() {
    };
   return (
     <>
-      <div className="inputform">
+      <div className="flex w-3/5 mx-auto my-1 py-0 border-2 border-wx-light justify-center items-center">
         <InputBar onChange={handleChange} text={inputVal}/>
         
         { inputVal != '' && <Button onClick={()=>setItem(inputVal)} text="Add" /> }

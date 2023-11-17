@@ -13,8 +13,8 @@ export default function Group({ groupName }: myProps) {
     </>
   );
   return (
-    <div className="groupframe">
-      <h1 className="grouptext" onClick={()=>setShow(!show)}>{groupName}</h1>
+    <div className="grid grid-cols-3 gap-2 p-2 cursor-pointer">
+      <h1 className="text-lg text-wx-light col-span-3 font-bold" onClick={()=>setShow(!show)}>{groupName}</h1>
       {
         show && cards
       }

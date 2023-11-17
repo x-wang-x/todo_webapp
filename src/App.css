@@ -1,73 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap");
 :root {
   font-family: "Pixelify Sans", sans-serif;
-  
-  --primary : #222323;
-  --secondary : #F0F6F0;
+
+  --primary: #222323;
+  --secondary: #f0f6f0;
 }
 body {
   background-color: var(--primary);
-}
-.input {
-  flex-grow: 1;
-  margin: 2px;
-  background-color: var(--primary);
-  color: var(--secondary);
-  padding: 2px;
-  border : none;
-  /* border: .15rem solid var(--secondary); */
-}
-.input:focus {
-  outline: none;
-}
-.btn {
-  margin: 2px;
-  /* border: .15rem solid var(--secondary); */
-  border : none;
-  color : var(--secondary);
-  background-color: var(--primary);
-  padding: 2px;
-}
-.btn:hover {
-  color: var(--primary);
-  background-color: var(--secondary);
-}
-
-.inputform {
-  border: .15rem solid var(--secondary);
-  width: 70%;
-  margin: 0 auto;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-}
-.groupframe {
-  display: grid;
-  gap: 15px;
-  grid-template-columns: auto auto auto;
-  padding: 10px;
-  color : var(--secondary)
-}
-.grouptext {
-  cursor: pointer;
-  grid-column: 1/4;
-  font-weight: bold;
-  margin-top: 10px;
-}
-.card {
-  cursor: pointer;
-  padding: 10px;
-  border: 2px solid var(--secondary);
-  width: 100%;
-}
-
-.cardtitle {
-  font-weight: bold;
-  font-size: 1.15rem;
-}
-.cardcontent {
-  font-size: 1rem;
-}
-.ungroups {
-  display: grid;
 }

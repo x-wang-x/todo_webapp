@@ -5,7 +5,7 @@ interface ButtonProps {
 
 const Button = ({onClick,text} : ButtonProps) => {
   return (
-    <button onClick={onClick} className="btn">{text}</button>
+    <button onClick={onClick} className="p-1 border-none text-wx-light hover:bg-wx-light hover:text-wx-dark">{text}</button>
   )
 }
 
