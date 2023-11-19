@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 function useLocalStorage(key: string, item: string) {
-    // alert(key)
+    const getData = localStorage.getItem('dsata') || '{}';
+    console.log(JSON.parse(getData))
     useEffect(() => {
         localStorage.setItem(key,JSON.stringify(item))
     },[item, key])
