@@ -1,9 +1,11 @@
 import { Fragment } from "react";
 import Card from "./Card";
-import { getData } from "../module/storeData";
-
-const CardList = () => {
-  const datas = getData("data")
+import { search } from "../module/storeData";
+interface props  {
+    id : number;
+}
+const CardList = ({id} : props) => {
+  const datas = search('index','group_id',id.toString())
   const cards = (
     <>
       {datas.map((item, idx: number) => (

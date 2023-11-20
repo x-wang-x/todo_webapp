@@ -1,16 +1,17 @@
 import {useState,Suspense,lazy } from "react";
 
 interface myProps {
+  id: number;
   groupName: string;
 }
 function Loading() {
   return <h2>🌀 Loading...</h2>;
 }
-export default function Group({ groupName }: myProps) {
+export default function Group({ id, groupName }: myProps) {
   const [show, setShow] = useState(false);
   const CardList = lazy(() => import('./CardList'));
   const x = (
-    <Suspense fallback={<Loading />}><CardList /></Suspense>
+    <Suspense fallback={<Loading />}><CardList id={id}/></Suspense>
   )
   // console.log(datas)
   return (
