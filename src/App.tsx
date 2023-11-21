@@ -28,21 +28,28 @@ function App() {
   //   }
   //   localStorage.setItem(key, data);
   // };
+
+  const hide = (ref: React.RefObject<HTMLDivElement>) => {
+    ref.current?.classList.remove("block");
+    ref.current?.classList.add("hidden");
+  };
+  const show = (ref: React.RefObject<HTMLDivElement>) => {
+    ref.current?.classList.remove("hidden");
+    ref.current?.classList.add("block");
+  };
   useEffect(() => {
     if (focus) {
-      searchBox.current?.classList.toggle("hidden");
-      searchBox.current?.classList.toggle("block");
-
-      overlay.current?.classList.toggle("hidden");
-      overlay.current?.classList.toggle("block");
+      if (inputVal != "") {
+        show(searchBox);
+      }
+      show(overlay);
     } else {
-      searchBox.current?.classList.toggle("block");
-      searchBox.current?.classList.toggle("hidden");
-
-      overlay.current?.classList.toggle("block");
-      overlay.current?.classList.toggle("hidden");
+      hide(overlay);
+      setTimeout(() => {
+        hide(searchBox);
+      }, 1000); //if input unfocus searchbox close immediately, so give 1 second to searchbox appear before close to give user chance to click
     }
-  }, [focus]);
+  }, [focus, inputVal]);
   const handleChange = (x: string = "") => {
     setInputVal(x);
   };
@@ -52,7 +59,7 @@ function App() {
         ref={overlay}
         className="fixed hidden w-full h-full top-0 bottom-0 left-0 right-0 z-0 bg-wx-light bg-opacity-50"
       ></div>
-      <div className="flex flex-wrap w-3/5 mx-auto my-1 py-0 border-2 border-wx-light justify-between z-10 relative">
+      <div className="flex flex-wrap w-3/5 mx-auto mb-0 mt-5 border-2 border-wx-light justify-between z-10 relative">
         <InputBar
           onChange={handleChange}
           onFocus={setFocus}
@@ -61,10 +68,18 @@ function App() {
         />
       </div>
       <div className="text-wx-light h-fit">
-        {/* {inputVal != "" && (
-        )} */}
-        <div ref={searchBox} className="bg-wx-dark p-2 text-wx-light border-2 border-wx-light basis-full hidden text-wx-dark mx-auto w-3/5 z-10 left-0 right-0 absolute">
-          Add new entries
+        <div
+          ref={searchBox}
+          className="bg-wx-dark p-2 text-wx-light border-t-0 border-2 my-0 border-wx-light basis-full hidden mx-auto w-3/5 z-10 left-0 right-0 absolute"
+        >
+          <p
+            className="cursor-pointer"
+            onClick={() => {
+              alert("ok");
+            }}
+          >
+            Add new
+          </p>
         </div>
         {groups}
       </div>
