@@ -59,21 +59,20 @@ function App() {
         ref={overlay}
         className="fixed hidden w-full h-full top-0 bottom-0 left-0 right-0 z-0 bg-wx-light bg-opacity-50"
       ></div>
-      <div className="flex flex-wrap w-3/5 mx-auto mb-0 mt-5 border-2 border-wx-light justify-between z-10 relative">
+      <div className="w-3/5 mx-auto mb-0 mt-5 border-2 border-wx-light justify-between z-10 relative">
         <InputBar
           onChange={handleChange}
           onFocus={setFocus}
           text={inputVal}
-          onClick={() => alert("ok")}
         />
       </div>
       <div className="text-wx-light h-fit">
         <div
           ref={searchBox}
-          className="bg-wx-dark p-2 text-wx-light border-t-0 border-2 my-0 border-wx-light basis-full hidden mx-auto w-3/5 z-10 left-0 right-0 absolute"
+          className="bg-wx-dark text-wx-light border-t-0 border-2 my-0 border-wx-light basis-full hidden mx-auto w-3/5 z-10 left-0 right-0 absolute"
         >
           <p
-            className="cursor-pointer"
+            className="cursor-pointer px-2 py-1 hover:bg-wx-light hover:text-wx-dark m-0"
             onClick={() => {
               alert("ok");
             }}
