@@ -4,6 +4,7 @@ import "./App.css";
 import Group from "./components/Group";
 import { useState, Fragment, useEffect, useRef } from "react";
 import { getData } from "./module/storeData";
+import Modal from "./components/Modal";
 
 const datas = getData("groups");
 const groups = (
@@ -21,13 +22,6 @@ function App() {
   const [focus, setFocus] = useState(false);
   const overlay = useRef<HTMLDivElement>(null);
   const searchBox = useRef<HTMLDivElement>(null);
-  // const setData = (key: string, data: object | string) => {
-  //   console.log(key, data);
-  //   if (typeof data == "object") {
-  //     data = JSON.stringify(data);
-  //   }
-  //   localStorage.setItem(key, data);
-  // };
 
   const hide = (ref: React.RefObject<HTMLDivElement>) => {
     ref.current?.classList.remove("block");
@@ -53,18 +47,29 @@ function App() {
   const handleChange = (x: string = "") => {
     setInputVal(x);
   };
+  const targetEl = document.getElementById("defaultModal");
+  // open and hide modaal
+  const openModal = () => {
+    show(overlay)
+    targetEl?.classList.remove("hidden");
+  };
+  const closeModal = () => {
+    targetEl?.classList.add("hidden");
+    hide(overlay)
+  };
   return (
     <>
       <div
         ref={overlay}
         className="fixed hidden w-full h-full top-0 bottom-0 left-0 right-0 z-0 bg-wx-light bg-opacity-50"
       ></div>
+      <Modal
+        id={"defaultModal"}
+        value={{name : inputVal}}
+        closeModalFunction={closeModal}
+      />
       <div className="w-3/5 mx-auto mb-0 mt-5 border-2 border-wx-light justify-between z-10 relative">
-        <InputBar
-          onChange={handleChange}
-          onFocus={setFocus}
-          text={inputVal}
-        />
+        <InputBar onChange={handleChange} onFocus={setFocus} text={inputVal} />
       </div>
       <div className="text-wx-light h-fit">
         <div
@@ -74,7 +79,7 @@ function App() {
           <p
             className="cursor-pointer px-2 py-1 hover:bg-wx-light hover:text-wx-dark m-0"
             onClick={() => {
-              alert("ok");
+              openModal();
             }}
           >
             Add new
