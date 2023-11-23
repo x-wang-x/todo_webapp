@@ -68,13 +68,13 @@ function App() {
         value={{name : inputVal}}
         closeModalFunction={closeModal}
       />
-      <div className="w-3/5 mx-auto mb-0 mt-5 border-2 border-wx-light justify-between z-10 relative">
+      <div className="w-4/5 lg:w-3/5 mx-auto mb-0 mt-5 border-2 border-wx-light justify-between z-10 relative">
         <InputBar onChange={handleChange} onFocus={setFocus} text={inputVal} />
       </div>
       <div className="text-wx-light h-fit">
         <div
           ref={searchBox}
-          className="bg-wx-dark text-wx-light border-t-0 border-2 my-0 border-wx-light basis-full hidden mx-auto w-3/5 z-10 left-0 right-0 absolute"
+          className="w-4/5 lg:w-3/5 bg-wx-dark text-wx-light border-t-0 border-2 my-0 border-wx-light basis-full hidden mx-auto z-10 left-0 right-0 absolute"
         >
           <p
             className="cursor-pointer px-2 py-1 hover:bg-wx-light hover:text-wx-dark m-0"

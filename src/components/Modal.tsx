@@ -15,13 +15,11 @@ const Modal = ({ id, closeModalFunction, value }: props) => {
         id={id}
         tabIndex={-1}
         aria-hidden="true"
-        className={`hidden fixed top-0 right-0 left-0 z-50 w-3/5 mx-auto h-full bg-wx-dark text-wx-light`}
+        className={`hidden fixed top-0 right-0 left-0 z-50 w-full md:w-3/5 mx-auto h-full bg-wx-dark text-wx-light`}
       >
-        <div className="relative p-4 w-full h-full">
-          {/* Modal content  */}
-          <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
-            {/* Modal header */}
-            <div className="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+        <div className="flex flex-col p-4 w-full h-full">
+          {/* Modal header */}
+            <div className="flex-none flex justify-between pb-1 mb-3 border-b-2 dark:border-gray-600">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                 Add New Notes
               </h3>
@@ -48,24 +46,23 @@ const Modal = ({ id, closeModalFunction, value }: props) => {
               </button>
             </div>
             {/*  Modal body  */}
-            <div className="p-6 space-y-6">
-              <span>Note Name : </span>
+            <div className="grow flex flex-col">
+              <span className="mb-1">Note Name : </span>
               <input
                 type="text"
-                className="w-full pl-2 py-1 border border-wx-light bg-wx-dark text-wx-light focus:outline-none"
+                className="h-fit mb-3 pl-2 py-1 border border-wx-light bg-wx-dark text-wx-light focus:outline-none"
                 defaultValue={value?.name}
               ></input>
-              <span>Write Your Notes : </span>
-              <textarea className="w-full pl-2 py-1 border border-wx-light bg-wx-dark text-wx-light focus:outline-none"></textarea>
+              <span className="mb-1">Write Your Notes : </span>
+              <textarea className="h-full overflow-scroll mb-3 pl-2 border border-wx-light bg-wx-dark text-wx-light focus:outline-none"></textarea>
             </div>
             {/* <!-- Modal footer --> */}
-            <div className="flex items-center p-6 space-x-2 border-t-2 border-wx-light justify-center">
+            <div className="flex-none mt-3 pt-1 flex items-end border-t-2 border-wx-light justify-end gap-2">
               <Button onClick={() => alert("ok")} text="Add" />
-              <Button onClick={() => closeModalFunction} text="Cancel" />
+              <Button onClick={() => closeModalFunction()} text="Cancel" />
             </div>
           </div>
         </div>
-      </div>
     </>
   );
 };
