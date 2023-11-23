@@ -6,11 +6,12 @@ interface props  {
 }
 const CardList = ({id} : props) => {
   const datas = search('index','group_id',id.toString())
+  console.log(id)
   const cards = (
     <>
       {datas.map((item, idx: number) => (
         <Fragment key={idx}>
-          <Card title={item['title']} content={item['content']} />
+          <Card title={item['title']} content={item['content_id']} />
         </Fragment>
       ))}
     </>

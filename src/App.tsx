@@ -7,11 +7,12 @@ import { getData } from "./module/storeData";
 import Modal from "./components/Modal";
 
 const datas = getData("groups");
+console.log(datas)
 const groups = (
   <>
     {datas.map((item, idx: number) => (
       <Fragment key={idx}>
-        <Group id={idx} groupName={item["group_name"]} />
+        <Group id={item["group_id"]} groupName={item["group_name"]} />
       </Fragment>
     ))}
   </>

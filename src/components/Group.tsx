@@ -15,7 +15,7 @@ export default function Group({ id, groupName }: myProps) {
   )
   // console.log(datas)
   return (
-    <div className="grid grid-cols-3 mb-3 cursor-pointer">
+    <div className="grid grid-cols-3 mb-5 cursor-pointer border-l-2 pl-2 gap-3">
       <h1
         className="text-lg text-wx-light mt-1 col-span-3 font-bold"
         onClick={() => setShow(!show)}
