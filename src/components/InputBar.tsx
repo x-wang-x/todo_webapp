@@ -7,7 +7,7 @@ const InputBar = ({ onChange, text , onFocus}: InputProps) => {
   return (
     <>
       <input
-        className="w-full pl-2 py-1 bg-wx-dark text-wx-light focus:outline-none"
+        className="w-full bg-wx-dark text-wx-light pl-2 py-1 border border-wx-light focus:outline-none"
         onChange={(e) => onChange(e.target.value)}
         onBlur={() => onFocus(false)}
         onFocus={() => onFocus(true)}

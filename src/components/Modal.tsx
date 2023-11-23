@@ -54,7 +54,7 @@ const Modal = ({ id, closeModalFunction, value }: props) => {
                 defaultValue={value?.name}
               ></input>
               <span className="mb-1">Write Your Notes : </span>
-              <textarea className="h-full overflow-scroll mb-3 pl-2 border border-wx-light bg-wx-dark text-wx-light focus:outline-none"></textarea>
+              <textarea className="h-full resize-none overflow-scroll mb-3 pl-2 border border-wx-light bg-wx-dark text-wx-light focus:outline-none"></textarea>
             </div>
             {/* <!-- Modal footer --> */}
             <div className="flex-none mt-3 pt-1 flex items-end border-t-2 border-wx-light justify-end gap-2">

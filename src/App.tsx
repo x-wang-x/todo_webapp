@@ -50,34 +50,56 @@ function App() {
   const targetEl = document.getElementById("defaultModal");
   // open and hide modaal
   const openModal = () => {
-    show(overlay)
+    show(overlay);
     targetEl?.classList.remove("hidden");
   };
   const closeModal = () => {
     targetEl?.classList.add("hidden");
-    hide(overlay)
+    hide(overlay);
   };
   return (
     <>
       <div
         ref={overlay}
-        className="fixed hidden w-full h-full top-0 bottom-0 left-0 right-0 z-0 bg-wx-light bg-opacity-50"
+        className="absolute hidden w-full h-full top-0 bottom-0 left-0 right-0 z-0 bg-wx-light bg-opacity-50"
       ></div>
       <Modal
         id={"defaultModal"}
-        value={{name : inputVal}}
+        value={{ name: inputVal }}
         closeModalFunction={closeModal}
       />
-      <div className="w-4/5 lg:w-3/5 mx-auto mb-0 mt-5 border-2 border-wx-light justify-between z-10 relative">
+      <div className="w-4/5 lg:w-3/5 mx-auto mb-0 mt-3 z-10 left-0 right-0 border-b-2 pb-3 border-wx-light relative">
         <InputBar onChange={handleChange} onFocus={setFocus} text={inputVal} />
-      </div>
-      <div className="text-wx-light h-fit">
         <div
           ref={searchBox}
-          className="w-4/5 lg:w-3/5 bg-wx-dark text-wx-light border-t-0 border-2 my-0 border-wx-light basis-full hidden mx-auto z-10 left-0 right-0 absolute"
+          className="w-full bg-wx-dark text-wx-light my-0 border-wx-light hidden border border-t-0 z-10 right-0 -left-0 absolute"
         >
           <p
-            className="cursor-pointer px-2 py-1 hover:bg-wx-light hover:text-wx-dark m-0"
+            className="cursor-pointer pl-2 py-1 hover:bg-wx-light hover:text-wx-dark m-0"
+            onClick={() => {
+              openModal();
+            }}
+          >
+            Example 1
+          </p>
+          <p
+            className="cursor-pointer pl-2 py-1 hover:bg-wx-light hover:text-wx-dark m-0"
+            onClick={() => {
+              openModal();
+            }}
+          >
+            Example 2
+          </p>
+          <p
+            className="cursor-pointer pl-2 py-1 hover:bg-wx-light hover:text-wx-dark m-0"
+            onClick={() => {
+              openModal();
+            }}
+          >
+            Example 3
+          </p>
+          <p
+            className="cursor-pointer pl-2 py-1 hover:bg-wx-light hover:text-wx-dark m-0"
             onClick={() => {
               openModal();
             }}
@@ -85,6 +107,8 @@ function App() {
             Add new
           </p>
         </div>
+      </div>
+      <div className="relative text-wx-light h-fit mt-3 mx-0 px-3">
         {groups}
       </div>
     </>
